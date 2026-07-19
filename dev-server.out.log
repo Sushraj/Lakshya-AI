@@ -1,0 +1,26 @@
+▲ Next.js 16.2.10 (webpack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 1141ms
+- Cache Components enabled
+
+○ Compiling /auth/login ...
+ GET /auth/login 200 in 9.8s (next.js: 9.0s, proxy.ts: 363ms, application-code: 467ms)
+○ Compiling /dashboard ...
+ GET /dashboard 200 in 5.7s (next.js: 5.1s, proxy.ts: 200ms, application-code: 375ms)
+ GET / 307 in 769ms (next.js: 560ms, proxy.ts: 9ms, application-code: 200ms)
+ GET / 307 in 1925ms (next.js: 22ms, proxy.ts: 607ms, application-code: 1296ms)
+ GET /dashboard 200 in 783ms (next.js: 66ms, proxy.ts: 33ms, application-code: 685ms)
+ GET /dashboard? 200 in 588ms (next.js: 18ms, proxy.ts: 53ms, application-code: 517ms)
+ GET / 307 in 736ms (next.js: 11ms, proxy.ts: 22ms, application-code: 703ms)
+ GET /dashboard 200 in 446ms (next.js: 13ms, proxy.ts: 20ms, application-code: 412ms)
+ GET /dashboard 200 in 3.2s (next.js: 524ms, proxy.ts: 754ms, application-code: 1966ms)
+ GET /dashboard 200 in 3.3s (next.js: 1686ms, proxy.ts: 755ms, application-code: 813ms)
+○ Compiling /auth/login ...
+ GET /dashboard 200 in 3.2s (next.js: 212ms, proxy.ts: 1435ms, application-code: 1584ms)
+ GET /auth/login 200 in 1824ms (next.js: 302ms, proxy.ts: 989ms, application-code: 533ms)
+ GET /auth/login 200 in 6.9s (next.js: 3.5s, proxy.ts: 31ms, application-code: 3.4s)
+ GET /auth/login 200 in 3.7s (next.js: 120ms, proxy.ts: 1434ms, application-code: 2.2s)
+ GET /auth/login 200 in 532ms (next.js: 18ms, proxy.ts: 30ms, application-code: 484ms)
+ GET /dashboard 200 in 351ms (next.js: 15ms, proxy.ts: 30ms, application-code: 306ms)
+ GET /auth/login 200 in 564ms (next.js: 12ms, proxy.ts: 174ms, application-code: 378ms)

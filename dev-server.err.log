@@ -1,0 +1,117 @@
+⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at async AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     { {
+  digest: '1570062634'
+}
+⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at async AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     { {
+  digest: '1570062634'
+}
+[browser] Uncaught Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at  AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     {
+⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at async AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     { {
+  digest: '1570062634'
+}
+[browser] Uncaught Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at  AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     {
+⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at async AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     { {
+  digest: '1570062634'
+}
+[browser] Uncaught Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at createClient (lib\supabase\server.ts:12:28)
+    at  AuthenticatedAppLayout (app\(app)\layout.tsx:25:20)
+  10 |   const cookieStore = await cookies();
+  11 |
+> 12 |   return createServerClient(
+     |                            ^
+  13 |     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  14 |     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  15 |     {
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.

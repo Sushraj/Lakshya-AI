@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +11,7 @@ import {
 import { Laptop, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -29,28 +30,28 @@ const ThemeSwitcher = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size={"sm"}>
-          {theme === "light" ? (
-            <Sun
-              key="light"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
-          ) : theme === "dark" ? (
-            <Moon
-              key="dark"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
-          ) : (
-            <Laptop
-              key="system"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
-          )}
-        </Button>
+      <DropdownMenuTrigger
+        className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+      >
+        {theme === "light" ? (
+          <Sun
+            key="light"
+            size={ICON_SIZE}
+            className={"text-muted-foreground"}
+          />
+        ) : theme === "dark" ? (
+          <Moon
+            key="dark"
+            size={ICON_SIZE}
+            className={"text-muted-foreground"}
+          />
+        ) : (
+          <Laptop
+            key="system"
+            size={ICON_SIZE}
+            className={"text-muted-foreground"}
+          />
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-content" align="start">
         <DropdownMenuRadioGroup
