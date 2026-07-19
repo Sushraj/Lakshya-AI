@@ -1,9 +1,9 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-export const hasEnvVars =
-  Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL) &&
-  Boolean(process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY)
+import { hasSupabaseEnvVars } from "@/lib/supabase/config"
+
+export const hasEnvVars = hasSupabaseEnvVars
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

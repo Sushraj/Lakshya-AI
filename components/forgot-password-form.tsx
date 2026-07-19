@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, hasEnvVars } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,9 +26,18 @@ export function ForgotPasswordForm({
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = createClient();
     setIsLoading(true);
     setError(null);
+
+    if (!hasEnvVars) {
+      setError(
+        "Supabase environment variables are required before resetting a password.",
+      );
+      setIsLoading(false);
+      return;
+    }
+
+    const supabase = createClient();
 
     try {
       // The url which will be included in the email. This URL needs to be configured in your redirect URLs in the Supabase dashboard at https://supabase.com/dashboard/project/_/auth/url-configuration
@@ -83,7 +92,11 @@ export function ForgotPasswordForm({
                   />
                 </div>
                 {error && <p className="text-sm text-red-500">{error}</p>}
-                <Button type="submit" className="w-full" disabled={isLoading}>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={isLoading || !hasEnvVars}
+                >
                   {isLoading ? "Sending..." : "Send reset email"}
                 </Button>
               </div>

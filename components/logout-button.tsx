@@ -2,7 +2,7 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, hasEnvVars } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
 type LogoutButtonProps = {
@@ -13,6 +13,11 @@ export function LogoutButton({ className }: LogoutButtonProps) {
   const router = useRouter();
 
   const logout = async () => {
+    if (!hasEnvVars) {
+      router.push("/auth/login");
+      return;
+    }
+
     const supabase = createClient();
     await supabase.auth.signOut();
     router.push("/auth/login");

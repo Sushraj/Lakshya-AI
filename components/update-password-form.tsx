@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, hasEnvVars } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,9 +26,18 @@ export function UpdatePasswordForm({
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = createClient();
     setIsLoading(true);
     setError(null);
+
+    if (!hasEnvVars) {
+      setError(
+        "Supabase environment variables are required before updating a password.",
+      );
+      setIsLoading(false);
+      return;
+    }
+
+    const supabase = createClient();
 
     try {
       const { error } = await supabase.auth.updateUser({ password });
@@ -66,7 +75,11 @@ export function UpdatePasswordForm({
                 />
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button
+                type="submit"
+                className="w-full"
+                disabled={isLoading || !hasEnvVars}
+              >
                 {isLoading ? "Saving..." : "Save new password"}
               </Button>
             </div>
