@@ -1,0 +1,16 @@
+▲ Next.js 16.2.10 (webpack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+- Environments: .env.local
+✓ Ready in 1239ms
+- Cache Components enabled
+
+○ Compiling proxy ...
+○ Compiling /auth/login ...
+ GET /auth/sign-up 200 in 2.1s (next.js: 164ms, proxy.ts: 1785ms, application-code: 177ms)
+ GET /auth/sign-up 200 in 25.5s (next.js: 22.9s, proxy.ts: 1136ms, application-code: 1474ms)
+ GET /auth/sign-up 200 in 25.5s (next.js: 22.9s, proxy.ts: 1137ms, application-code: 1470ms)
+ GET /auth/login 200 in 25.5s (next.js: 22.9s, proxy.ts: 1136ms, application-code: 1475ms)
+ GET /auth/login 200 in 827ms (next.js: 26ms, proxy.ts: 41ms, application-code: 761ms)
+ GET /auth/login 200 in 809ms (next.js: 123ms, proxy.ts: 159ms, application-code: 527ms)
+ GET /auth/login 200 in 284ms (next.js: 16ms, proxy.ts: 18ms, application-code: 249ms)
