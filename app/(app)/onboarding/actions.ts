@@ -37,24 +37,24 @@ export async function completeOnboarding(
 
   const profile = {
     id: userId,
-    name: data.name,
+    full_name: data.name,
     age: data.age,
     city: data.city,
     state: data.state,
     occupation: data.occupation,
     preferred_language: data.preferredLanguage,
+    onboarding_completed: true,
   };
 
   const healthProfile = {
     user_id: userId,
     dietary_preference: data.dietaryPreference,
     regional_cuisine: data.regionalCuisine,
-    health_conditions: data.healthConditions,
     allergies: data.allergies,
     food_restrictions: data.foodRestrictions,
     injuries: data.injuries,
-    height: data.height,
-    weight: data.weight,
+    height_cm: data.height,
+    weight_kg: data.weight,
     fitness_goal: data.fitnessGoal,
     activity_level: data.activityLevel,
   };
@@ -62,20 +62,35 @@ export async function completeOnboarding(
   const financialProfile = {
     user_id: userId,
     monthly_income: data.monthlyIncome,
-    fixed_expenses: data.fixedExpenses,
-    variable_expenses: data.variableExpenses,
+    monthly_fixed_expenses: data.fixedExpenses,
+    monthly_variable_expenses: data.variableExpenses,
     current_savings: data.currentSavings,
     emergency_fund: data.emergencyFund,
     monthly_savings_goal: data.monthlySavingsGoal,
+    currency: "INR",
   };
 
-  const goals = {
-    user_id: userId,
-    health_goal: data.healthGoal,
-    professional_goal: data.professionalGoal,
-    financial_goal: data.financialGoal,
-    personal_development_goal: data.personalDevelopmentGoal,
-  };
+  const goals = [
+    { user_id: userId, category: "health", title: data.healthGoal, status: "active" },
+    {
+      user_id: userId,
+      category: "professional",
+      title: data.professionalGoal,
+      status: "active",
+    },
+    {
+      user_id: userId,
+      category: "financial",
+      title: data.financialGoal,
+      status: "active",
+    },
+    {
+      user_id: userId,
+      category: "personal_development",
+      title: data.personalDevelopmentGoal,
+      status: "active",
+    },
+  ];
 
   const operations = [
     {
@@ -94,19 +109,6 @@ export async function completeOnboarding(
         .from("financial_profiles")
         .upsert(financialProfile, { onConflict: "user_id" }),
     },
-    {
-      label: "goals",
-      query: supabase.from("goals").upsert(goals, { onConflict: "user_id" }),
-    },
-    {
-      label: "onboarding status",
-      query: supabase
-        .from("profiles")
-        .upsert(
-          { ...profile, onboarding_completed: true },
-          { onConflict: "id" },
-        ),
-    },
   ];
 
   for (const operation of operations) {
@@ -120,6 +122,28 @@ export async function completeOnboarding(
     }
   }
 
+  const goalCategories = goals.map((goal) => goal.category);
+  const { error: deleteGoalsError } = await supabase
+    .from("goals")
+    .delete()
+    .eq("user_id", userId)
+    .in("category", goalCategories);
+
+  if (deleteGoalsError) {
+    return {
+      success: false,
+      message: `Could not refresh goals: ${deleteGoalsError.message}`,
+    };
+  }
+
+  const { error: insertGoalsError } = await supabase.from("goals").insert(goals);
+
+  if (insertGoalsError) {
+    return {
+      success: false,
+      message: `Could not save goals: ${insertGoalsError.message}`,
+    };
+  }
+
   return { success: true };
 }
-
